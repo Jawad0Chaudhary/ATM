@@ -7,7 +7,7 @@ const pinanswer = await inquirer.prompt([
         name: "pin",
         message: "Enter Your Pin: ",
         type: "number",
-    }
+    },
 ]);
 if (pinanswer.pin == myPin) {
     console.log("You Entered Correct Pin Code!!!");
@@ -16,8 +16,8 @@ if (pinanswer.pin == myPin) {
             name: "operation",
             message: "Please Select Option",
             type: "list",
-            choices: ["withdraw", "check-balance", "fast-cash"]
-        }
+            choices: ["withdraw", "check-balance", "fast-cash"],
+        },
     ]);
     if (operationAns.operation === "withdraw") {
         let amountAns = await inquirer.prompt([
@@ -25,7 +25,7 @@ if (pinanswer.pin == myPin) {
                 name: "amount",
                 message: "Enter Your Amount: ",
                 type: "number",
-            }
+            },
         ]);
         if (amountAns.amount > myBalance) {
             console.log("Insufficient Balance!");
@@ -45,8 +45,8 @@ if (pinanswer.pin == myPin) {
                 name: "fast",
                 message: "Please Select Option",
                 type: "list",
-                choices: ["500", "1000", "5000", "10000"]
-            }
+                choices: ["500", "1000", "5000", "10000"],
+            },
         ]);
         myBalance -= amountSelect.fast;
         console.log(`${"Your Remaining Amount Is:"} ${myBalance}`);
